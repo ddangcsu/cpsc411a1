@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DHDStudent.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        DHDStudent* student = [DHDStudent createStudentFromPrompt];
+        [student showStudentInfo];
     }
     return 0;
 }

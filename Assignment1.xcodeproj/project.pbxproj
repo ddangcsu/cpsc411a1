@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		638485C91D85E2E300F8E065 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 638485C81D85E2E300F8E065 /* main.m */; };
+		638485D11D85E40A00F8E065 /* DHDStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 638485D01D85E40A00F8E065 /* DHDStudent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		638485C51D85E2E300F8E065 /* Assignment1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Assignment1; sourceTree = BUILT_PRODUCTS_DIR; };
 		638485C81D85E2E300F8E065 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		638485CF1D85E40A00F8E065 /* DHDStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DHDStudent.h; path = Assignment1/DHDStudent.h; sourceTree = "<group>"; };
+		638485D01D85E40A00F8E065 /* DHDStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DHDStudent.m; path = Assignment1/DHDStudent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +44,7 @@
 		638485BC1D85E2E300F8E065 = {
 			isa = PBXGroup;
 			children = (
+				638485D21D85E41800F8E065 /* Custom Classes */,
 				638485C71D85E2E300F8E065 /* Assignment1 */,
 				638485C61D85E2E300F8E065 /* Products */,
 			);
@@ -60,6 +64,15 @@
 				638485C81D85E2E300F8E065 /* main.m */,
 			);
 			path = Assignment1;
+			sourceTree = "<group>";
+		};
+		638485D21D85E41800F8E065 /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				638485CF1D85E40A00F8E065 /* DHDStudent.h */,
+				638485D01D85E40A00F8E065 /* DHDStudent.m */,
+			);
+			name = "Custom Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638485D11D85E40A00F8E065 /* DHDStudent.m in Sources */,
 				638485C91D85E2E300F8E065 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
