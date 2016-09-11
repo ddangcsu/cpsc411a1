@@ -44,7 +44,7 @@
 }
 
 -(void) addCoursesFromPrompt {
-    char cCourse[100], dumpBuffer[100];
+    char cCourse[100];
     char moreCourse;
     double cHWWeight, cMidtermWeight, cFinalWeight;
     double cHWAverage, cMidtermScore, cFinalScore;
