@@ -22,7 +22,8 @@
         _firstName = fname;
         _lastName = lname;
         _CWID = cwid;
-        _enrolledCourses = nil;
+        // Initialize the enrolledCourse with a set of 2 entries
+        _enrolledCourses = [NSMutableSet setWithCapacity:2];
     }
     return self;
 }
@@ -42,14 +43,60 @@
     
 }
 
+-(void) addCoursesFromPrompt {
+    char cCourse[100], dumpBuffer[100];
+    char moreCourse;
+    double cHWWeight, cMidtermWeight, cFinalWeight;
+    double cHWAverage, cMidtermScore, cFinalScore;
+    
+    do {
+        // Ask for Course Name and it's Weight on Homework, Midterm, and Final
+        NSLog(@"Enter register Course Name and its HomeWork, Midterm, Final Weight.\n");
+        NSLog(@"Example: CPSC411 20 30 50\n");
+        scanf("%s %lf %lf %lf", cCourse, &cHWWeight, &cMidtermWeight, &cFinalWeight);
+        
+        // Clear the Standard Input from Console
+        fpurge(stdin);
+        
+        // Initialize the temporary Course.
+        DHDCourse *tempCourse = [DHDCourse createCourse:[NSString stringWithUTF8String:cCourse]
+                                         homeWorkWeight:cHWWeight
+                                          midtermWeight:cMidtermWeight
+                                            finalWeight:cFinalWeight];
+        
+        // Ask for the Course scores
+        NSLog(@"Enter the earned scores for this course of HomeWork Average, Midterm, and Final.\n");
+        NSLog(@"Example: 75.5 78 88");
+        scanf("%lf %lf %lf", &cHWAverage, &cMidtermScore, &cFinalScore);
+        // Clear the Standard Input from Console
+        fpurge(stdin);
+        
+        // Update the scores
+        tempCourse.homeworkAverageScore = cHWAverage;
+        tempCourse.midtermScore = cMidtermScore;
+        tempCourse.finalScore = cFinalScore;
+        
+        // Add the newly entered course to the enrollCourses Set
+        [_enrolledCourses addObject:tempCourse];
+        tempCourse = nil;
+        
+        NSLog(@"Do you want to add more course? (Y/N)");
+        scanf("%c", &moreCourse);
+        // Clear the Standard Input from Console
+        fpurge(stdin);
+
+      } while ( moreCourse == 'Y' || moreCourse == 'y');
+}
+
 -(void) showStudentInfo {
     //TODO
     NSLog(@"Student Name is: %@ %@\n", _firstName, _lastName);
     NSLog(@"Student CWID: %@\n", _CWID);
     NSLog(@"Courses enrolled and grades\n");
-    for (id course in _enrolledCourses) {
+    for (DHDCourse* course in _enrolledCourses) {
         //TODO
-        NSLog(@"Course: %@", course);
+        //NSLog(@"Course: %@", course);
+        [course showCourseInfo];
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DHDCourse.h"
 
 @interface DHDStudent : NSObject
 
@@ -28,6 +29,7 @@
 +(id) createStudentFromPrompt;
 
 // Method to display the student information
+-(void) addCoursesFromPrompt;
 -(void) showStudentInfo;
 
 @end

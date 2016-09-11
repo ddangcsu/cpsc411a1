@@ -11,7 +11,13 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        // Create a student
         DHDStudent* student = [DHDStudent createStudentFromPrompt];
+        
+        // Tell student to add all the register courses
+        [student addCoursesFromPrompt];
+        
+        // Tell the student to display itself
         [student showStudentInfo];
     }
     return 0;

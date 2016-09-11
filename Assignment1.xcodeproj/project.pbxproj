@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		638485C91D85E2E300F8E065 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 638485C81D85E2E300F8E065 /* main.m */; };
 		638485D11D85E40A00F8E065 /* DHDStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 638485D01D85E40A00F8E065 /* DHDStudent.m */; };
+		638485D51D85F2DB00F8E065 /* DHDCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 638485D41D85F2DB00F8E065 /* DHDCourse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		638485C81D85E2E300F8E065 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		638485CF1D85E40A00F8E065 /* DHDStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DHDStudent.h; path = Assignment1/DHDStudent.h; sourceTree = "<group>"; };
 		638485D01D85E40A00F8E065 /* DHDStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DHDStudent.m; path = Assignment1/DHDStudent.m; sourceTree = "<group>"; };
+		638485D31D85F2DB00F8E065 /* DHDCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDCourse.h; sourceTree = "<group>"; };
+		638485D41D85F2DB00F8E065 /* DHDCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDCourse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 			children = (
 				638485CF1D85E40A00F8E065 /* DHDStudent.h */,
 				638485D01D85E40A00F8E065 /* DHDStudent.m */,
+				638485D31D85F2DB00F8E065 /* DHDCourse.h */,
+				638485D41D85F2DB00F8E065 /* DHDCourse.m */,
 			);
 			name = "Custom Classes";
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			files = (
 				638485D11D85E40A00F8E065 /* DHDStudent.m in Sources */,
 				638485C91D85E2E300F8E065 /* main.m in Sources */,
+				638485D51D85F2DB00F8E065 /* DHDCourse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
