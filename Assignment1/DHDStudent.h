@@ -17,7 +17,7 @@
 @property (nonatomic) NSString* CWID;
 
 // enrolledCourse
-@property (nonatomic) NSMutableSet* enrolledCourses;
+@property (nonatomic) NSMutableDictionary* enrolledCourses;
 
 // Initializer
 -(id) init;

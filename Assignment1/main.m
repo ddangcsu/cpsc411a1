@@ -19,6 +19,7 @@ int main(int argc, const char * argv[]) {
         
         // Tell the student to display itself
         [student showStudentInfo];
+
     }
     return 0;
 }
