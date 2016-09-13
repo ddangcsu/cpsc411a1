@@ -12,9 +12,9 @@
 
 // Declare a set of properties for a course
 @property (nonatomic) NSString* courseName;
-@property (nonatomic, readonly) double homeworkWeight;
-@property (nonatomic, readonly) double midtermWeight;
-@property (nonatomic, readonly) double finalWeight;
+@property (nonatomic) double homeworkWeight;
+@property (nonatomic) double midtermWeight;
+@property (nonatomic) double finalWeight;
 @property (nonatomic) double homeworkAverageScore;
 @property (nonatomic) double midtermScore;
 @property (nonatomic) double finalScore;

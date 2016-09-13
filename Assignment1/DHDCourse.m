@@ -9,30 +9,50 @@
 #import "DHDCourse.h"
 
 @implementation DHDCourse
-// Initializer
+
+/* 
+    Default initializer to set the courses to empty
+    Input: None
+    Output: a DHDCourse object initialized to empty
+ */
 -(id) init {
     self = [self initCourseName:nil homeWorkWeight:0 midtermWeight:0 finalWeight:0];
     return self;
 }
 
+/*
+    Initializer method to set the course with name and weights
+    Input:  (NSString*) name - Course Name
+            (double) hWeight - Homework Weight
+            (double) mWeight - Midterm Weight
+            (double) fWeight - Final Weight
+    Output: A DHDCourse object initialized with Name and Weights
+ */
 -(id) initCourseName: (NSString*) name
       homeWorkWeight: (double) hWeight
        midtermWeight: (double) mWeight
          finalWeight: (double) fWeight {
     
     if (self = [super init]) {
-        _courseName = name;
-        _homeworkWeight = hWeight;
-        _midtermWeight = mWeight;
-        _finalWeight = fWeight;
-        _homeworkAverageScore = 0;
-        _midtermScore = 0;
-        _finalScore = 0;
+        self.courseName = name;
+        self.homeworkWeight = hWeight;
+        self.midtermWeight = mWeight;
+        self.finalWeight = fWeight;
+        self.homeworkAverageScore = 0;
+        self.midtermScore = 0;
+        self.finalScore = 0;
     }
     return self;
 }
 
-// Class method to create a course
+/*
+    Initializer method to set the course with name and weights
+    Input:  (NSString*) name - Course Name
+            (double) hWeight - Homework Weight
+            (double) mWeight - Midterm Weight
+            (double) fWeight - Final Weight
+    Output: An allocated DHDCourse object initialized with Name and Weights
+ */
 +(id) createCourse: (NSString*) name
     homeWorkWeight: (double) hWeight
      midtermWeight: (double) mWeight
@@ -45,21 +65,30 @@
     
 }
 
-// Method to compute the overall score
+/*
+    Instance method to calculate the Course's overall score
+    Input: None
+    Output: A double represent the overall score calculated from the course's weights
+            and the raw scores for Homework Average, Midterm, and Final.
+ */
 -(double) calcScore {
     double hwScore, mtScore, fScore;
-    hwScore = (_homeworkAverageScore * _homeworkWeight)/100.0;
-    mtScore = (_midtermScore * _midtermWeight)/100.0;
-    fScore = (_finalScore * _finalWeight)/100.0;
+    hwScore = (self.homeworkAverageScore * self.homeworkWeight)/100.0;
+    mtScore = (self.midtermScore * self.midtermWeight)/100.0;
+    fScore = (self.finalScore * self.finalWeight)/100.0;
     
     return (hwScore + mtScore + fScore);
 }
 
-// Display Course information
+/*
+    Instance method to allow the course to display the course name along with
+    the course's overall calculated grade.
+    Input: None
+    Output: None
+ */
 -(void) showCourseInfo {
-    //TODO
-    NSLog(@"Course Name: %@\n", _courseName);
-    NSLog(@"Course OverAll Grade: %f \n\n", [self calcScore]);
+    NSLog(@"Course Name: %@\n", self.courseName);
+    NSLog(@"Course's Overall Grade: %f \n\n", [self calcScore]);
 }
 
 @end

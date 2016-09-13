@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DHDStudent.h"
+#import "DHDCourse.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -19,7 +20,7 @@ int main(int argc, const char * argv[]) {
         
         // Tell the student to display itself
         [student showStudentInfo];
-
+        
     }
     return 0;
 }
