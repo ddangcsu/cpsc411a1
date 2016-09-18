@@ -12,14 +12,26 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // Create a student
-        DHDStudent* student = [DHDStudent createStudentFromPrompt];
+        char continueFlag = '0';
         
-        // Tell student to add all the register courses
-        [student addCoursesFromPrompt];
+        do {
+            // Create a student
+            DHDStudent* student = [DHDStudent createStudentFromPrompt];
         
-        // Tell the student to display itself
-        [student showStudentInfo];
+            // Tell student to add all the register courses
+            [student addCoursesFromPrompt];
+        
+            // Tell the student to display itself
+            [student showStudentInfo];
+            
+            // Clear it so that it can reclaim the memory
+            student = nil;
+            
+            NSLog(@"Do you want to enter another student? (Y/N)");
+            scanf("%c", &continueFlag);
+            fpurge(stdin);
+            
+        } while (continueFlag == 'Y' || continueFlag == 'y');
         
     }
     return 0;

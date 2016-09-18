@@ -12,8 +12,8 @@
 
 /* 
     Default initializer to set the courses to empty
-    Input: None
-    Output: a DHDCourse object initialized to empty
+    @param: None
+    @return: a DHDCourse object initialized to default values
  */
 -(id) init {
     self = [self initCourseName:nil homeWorkWeight:0 midtermWeight:0 finalWeight:0];
@@ -22,11 +22,11 @@
 
 /*
     Initializer method to set the course with name and weights
-    Input:  (NSString*) name - Course Name
+    @param: (NSString*) name - Course Name
             (double) hWeight - Homework Weight
             (double) mWeight - Midterm Weight
             (double) fWeight - Final Weight
-    Output: A DHDCourse object initialized with Name and Weights
+    @return: A DHDCourse object initialized with Name and Weights
  */
 -(id) initCourseName: (NSString*) name
       homeWorkWeight: (double) hWeight
@@ -47,11 +47,11 @@
 
 /*
     Initializer method to set the course with name and weights
-    Input:  (NSString*) name - Course Name
+    @param: (NSString*) name - Course Name
             (double) hWeight - Homework Weight
             (double) mWeight - Midterm Weight
             (double) fWeight - Final Weight
-    Output: An allocated DHDCourse object initialized with Name and Weights
+    @return: An allocated DHDCourse object initialized with Name and Weights
  */
 +(id) createCourse: (NSString*) name
     homeWorkWeight: (double) hWeight
@@ -67,8 +67,8 @@
 
 /*
     Instance method to calculate the Course's overall score
-    Input: None
-    Output: A double represent the overall score calculated from the course's weights
+    @param: None
+    @return: A double represent the overall score calculated from the course's weights
             and the raw scores for Homework Average, Midterm, and Final.
  */
 -(double) calcScore {
@@ -83,8 +83,8 @@
 /*
     Instance method to allow the course to display the course name along with
     the course's overall calculated grade.
-    Input: None
-    Output: None
+    @param: None
+    @return: None
  */
 -(void) showCourseInfo {
     NSLog(@"Course Name: %@\n", self.courseName);

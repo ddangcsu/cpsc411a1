@@ -17,8 +17,8 @@
 
 /*
     Default Initializer method to create an empty Student Instance
-    Input: None
-    Output: A DHDStudent object initialized to empty
+    @param: None
+    @return: A DHDStudent object initialized to empty
  */
 -(id) init {
     self = [self initWithFirstName:nil lastName:nil andCWID:nil];
@@ -28,18 +28,18 @@
 /*
     Initializer method to populate the student instance with firstName, lastName, and
     CWID.  It will also initialize the enrolledCourses to have an initial capacity of 2
-    Input:  (NSString*) fname   - First Name of the Student
+    @param: (NSString*) fname   - First Name of the Student
             (NSString*) lname   - Last Name of the Student
             (NSString*) cwid    - The Student Campus Wide ID
-    Output: A DHDStudent object initialized with firstName, lastName, and CWID
+    @return: A DHDStudent object initialized with firstName, lastName, and CWID
  */
 -(id) initWithFirstName:(NSString *)fname lastName:(NSString *)lname
                 andCWID:(NSString *)cwid {
     
     if (self = [super init]) {
-        _firstName = fname;
-        _lastName = lname;
-        _CWID = cwid;
+        self.firstName = fname;
+        self.lastName = lname;
+        self.CWID = cwid;
         // Initialize the enrolledCourse with a set of 2 entries
         _enrolledCourses = [NSMutableDictionary dictionaryWithCapacity:2];
     }
@@ -51,21 +51,21 @@
     will prompt for the following information:
         - firstName, lastName, and CWID
     
-    Input: Interactive Console
-    Output: An allocated DHDStudent object initialized with firstName, lastName, and CWID
+    @param: Interactive Console
+    @return: An allocated DHDStudent object initialized with firstName, lastName, and CWID
  */
 +(id) createStudentFromPrompt {
-    // Use C scanf to read in the data from console
+    // Use C scanf to read in the data from console.
+    // Declare a set of C string type to temporary store data
     char cFirstName[100] = {0};
     char cLastName[100] = {0};
     char cCWID[10] = {0};
     NSLog(@"Enter Student Full Name and CWID. Example: David Dang 12345");
     scanf("%s %s %s", cFirstName, cLastName, cCWID);
+    // Clear out all the remaining \n from the standard input if any
     fpurge(stdin);
     
-    //TODO Validation if necessary
-    
-    // Create and return the student object
+    // Create and return the student object with the C String data from console
     return [[self alloc]
             initWithFirstName:[NSString stringWithUTF8String:cFirstName]
             lastName:[NSString stringWithUTF8String:cLastName]
@@ -75,8 +75,8 @@
 
 /*
     Getter method to return the full name of the student in First Last format
-    Input: None
-    Output: an NSString of the student full name in First Last format
+    @param: None
+    @return: an NSString of the student full name in First Last format
  */
 -(NSString*) fullName {
     return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
@@ -84,8 +84,8 @@
 
 /*
     Instance method for a student to add a course.
-    Input: course   - a DHDCourse instance
-    Output: YES if successfully add a course.  NO if failed.
+    @param: course   - a DHDCourse instance
+    @return: YES if successfully add a course.  NO if failed.
  */
 -(BOOL) enrolledCourse: (DHDCourse*) course {
     if ([_enrolledCourses objectForKey:course.courseName] == nil) {
@@ -98,11 +98,11 @@
 
 /*
     Instance method to update course with new weights
-    Input:  (NSString*) courseName   - String Name of the Course
+    @param: (NSString*) courseName   - String Name of the Course
             (double) hWeight    - HomeWork Weight
             (double) mWeight    - Midterm Weight
             (double) fWeight    - Final Weight
-    Output: YES if success else NO if error
+    @return: YES if success else NO if error
  */
 -(BOOL) updateCourseWeight: (NSString*) courseName
         withHWWeight: (double) hWeight
@@ -126,11 +126,11 @@
 
 /*
     Instance method to update course's score
-    Input:  (NSString*) courseName   - String Name of the Course
+    @param: (NSString*) courseName   - String Name of the Course
             (double) hwScore    - HomeWork Average Score
             (double) mScore    - Midterm Score
             (double) fScore    - Final Score
-    Output: YES if success else NO if error
+    @return: YES if success else NO if error
  */
 -(BOOL) updateCourseScore: (NSString*) courseName
          withHWScore: (double) hwScore
@@ -155,8 +155,8 @@
     Instance method to allow the student to display its own information.
     Display information include student Full Name, his/her CWID and all the courses
     information.
-    Input: None
-    Output: None
+    @param: None
+    @return: None
  */
 -(void) showStudentInfo {
     
@@ -181,8 +181,8 @@
  
     The result of the course will be added to the student's enrolledCourses Dictionary.
  
-    Input: Interactive Console
-    Output: None
+    @param: Interactive Console
+    @return: None
  */
 -(void) addCoursesFromPrompt {
     char cCourse[100];
